@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini IMDB Clone</title>
+  <!-- Link to the Bootstrap CSS framework hosted externally -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Link to the custom CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation bar using Bootstrap navbar component -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Brand link to the Home Page -->
+      <a class="navbar-brand" href="index.html">Mini IMDB Clone</a>
+      <!-- Navbar toggler button for small screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapsible navbar content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <!-- Navigation links to Home Page and My Favourite Movies Page -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favourites.html">My Favourite Movies Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main container for the search page -->
+  <div class="container">
+    <!-- Main heading for the search page -->
+    <h1 class="my-4">Search for movies</h1>
+    <!-- Search form section -->
+    <div class="search-form">
+      <!-- Input field to enter movie search query -->
+      <input type="text" id="searchInput" placeholder="Search for movies">
+      <!-- Search results will be displayed here -->
+      <div id="searchResults" class="mt-3"></div>
+    </div>
+  </div>
+
+  <!-- External JavaScript libraries: jQuery, Popper.js, and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

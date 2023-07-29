@@ -1,0 +1,245 @@
+/* Global Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://img.freepik.com/free-vector/cinema-stage-background-with-clapperboard-popcorn-chairs_1017-38722.jpg?w=1060&t=st=1690614299~exp=1690614899~hmac=7789a0d559e29d44237e121d31f233500f623032c90c0df365c96ee6c80ff696"); /* Add background color here */
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust background size here */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #232f3e;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-link {
+  color: #000000;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  color: #c20f0f;
+}
+
+/* Search Form */
+.search-form {
+  margin-bottom: 40px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Movie Cards */
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* CSS for the "Go to Favourite Page" button */
+.go-to-favourite {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.go-to-favourite:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+#favouriteMovies p {
+  font-weight: bold;
+  color: white;
+}
+
+/* Responsive Styles */
+
+/* For screen sizes less than or equal to 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    margin-left: 10px;
+  }
+
+  .search-form {
+    margin-bottom: 20px;
+  }
+
+  #searchInput {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
+
+/* For screen sizes less than or equal to 576px */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    margin-left: 5px;
+  }
+
+  #searchInput {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .card-text {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+}

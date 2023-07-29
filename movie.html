@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-text strong {
+        font-weight: bold;
+      }
+
+      .card-img-top {
+        max-width: 100%;
+      }
+      .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .card-text {
+        font-size: 16px;
+      }
+      .card-text:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Mini IMDB Clone</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="favourites.html"
+                >My Favourite Movies Page</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="movieDetails" class="container mt-4">
+      <!-- Movie details will be displayed here -->
+    </div>
+
+    <script>
+      const apiKey = "bfd6b563";
+
+      // Function to fetch movie details from the OMDB API
+      async function fetchMovieDetails(movieId) {
+        try {
+          const response = await fetch(
+            `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`
+          );
+          const data = await response.json();
+          if (data.Response === "True") {
+            return data;
+          } else {
+            console.error("Error fetching movie details:", data.Error);
+            return null;
+          }
+        } catch (error) {
+          console.error("Error fetching movie details:", error);
+          return null;
+        }
+      }
+
+      // Function to display movie details on the page
+      async function displayMovieDetails() {
+        const movieId = new URLSearchParams(window.location.search).get("id");
+        if (!movieId) {
+          document.getElementById("movieDetails").innerHTML =
+            "<p>Movie details not found.</p>";
+          return;
+        }
+
+        try {
+          const movieData = await fetchMovieDetails(movieId);
+          if (movieData) {
+            const movieInfo = `
+            <div class="card">
+              <img src="${movieData.Poster}" class="card-img-top" alt="${movieData.Title} Poster">
+              <div class="card-body">
+                <h5 class="card-title">${movieData.Title}</h5>
+                <p class="card-text"><strong>Year:</strong> ${movieData.Year}</p>
+                <p class="card-text"><strong>Ratings:</strong> ${movieData.Rated}</p>
+                <p class="card-text"><strong>Released:</strong> ${movieData.Released}</p>
+                <p class="card-text"><strong>Genre:</strong> ${movieData.Genre}</p>
+                <p class="card-text"><strong>Writer:</strong> ${movieData.Writer}</p>
+                <p class="card-text"><strong>Actors:</strong> ${movieData.Actors}</p>
+                <p class="card-text"><strong>Plot:</strong> ${movieData.Plot}</p>
+                <p class="card-text"><strong>Language:</strong> ${movieData.Language}</p>
+                <p class="card-text"><strong>Awards:</strong> ${movieData.Awards}</p>
+              </div>
+            </div>
+          `;
+            document.getElementById("movieDetails").innerHTML = movieInfo;
+          } else {
+            document.getElementById("movieDetails").innerHTML =
+              "<p>Movie details not found.</p>";
+          }
+        } catch (error) {
+          console.error("Error displaying movie details:", error);
+          document.getElementById("movieDetails").innerHTML =
+            "<p>Movie details not found.</p>";
+        }
+      }
+
+      // Call the displayMovieDetails function when the page loads
+      displayMovieDetails();
+    </script>
+  </body>
+</html>

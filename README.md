@@ -24,4 +24,5 @@ Start searching for your favourite movies and enjoy the movie details!
 ### Demo: https://nikhilrajsv054.github.io/IMDB-Clone/index.html
 
 
-### Note: This clone is for educational purposes only and does not have all the extensive features of the actual IMDB website. It is a basic demonstration of fetching data from an API, dynamic content display, and local storage usage. Feel free to explore and enhance the application further based on your preferences!
+### Note
+This clone is for educational purposes only and does not have all the extensive features of the actual IMDB website. It is a basic demonstration of fetching data from an API, dynamic content display, and local storage usage. Feel free to explore and enhance the application further based on your preferences!
